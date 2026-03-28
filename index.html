@@ -1,0 +1,52 @@
+/* 立方体容器：建立3D空间 */
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    margin: 100px auto; /* 居中显示 */
+}
+
+/* 所有面的通用样式 */
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 0.8; /* 半透明，增强3D层次感 */
+}
+
+/* 1. 正面：渐变 + 向前移动 */
+.front {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    transform: translateZ(100px);
+}
+
+/* 2. 背面：渐变 + 向后移动 + skewX模拟翻转 */
+.back {
+    background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+    transform: translateZ(-100px) skewX(180deg);
+}
+
+/* 3. 右面：渐变 + 向右移动 + skewY倾斜成侧面 */
+.right {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    transform: translateX(100px) skewY(30deg);
+}
+
+/* 4. 左面：渐变 + 向左移动 + skewY反向倾斜 */
+.left {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    transform: translateX(-100px) skewY(-30deg);
+}
+
+/* 5. 顶面：渐变 + 向上移动 + skewX倾斜成顶面 */
+.top {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    transform: translateY(-100px) skewX(30deg);
+}
+
+/* 6. 底面：渐变 + 向下移动 + skewX反向倾斜 */
+.bottom {
+    background: linear-gradient(45deg, #43e97b, #38f9d7);
+    transform: translateY(100px) skewX(-30deg);
+}
